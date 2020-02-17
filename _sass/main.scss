@@ -1,0 +1,235 @@
+$main-color: #306C51;
+
+$text-color: #3F3F3F;
+
+$title-font: bely-display, serif;
+$title-color: #4C8CAC;
+
+$main-font: 14pt bely, serif;
+
+$title-size: 2.5em;
+$title-spacing: .35em;
+$h1-size: 2.2em;
+$h2-size: $h1-size * 0.77;
+
+$text-margin: 12pt;
+
+$footer-font: 10pt "Futura", sans-serif;
+
+$threshold-width: 800px;
+
+/* Desktop special values */
+
+$desktop-width: 1080px;
+$desktop-title-size: $title-size * 2;
+
+.desktop
+{
+	display: none;
+}
+
+.mobile
+{
+	display: inherit;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	background-color: $main-color; 
+}
+
+/* Header stuff */
+
+header
+{
+	height: 8em;
+
+	h1
+	{
+		color: white;
+		font: condensed $title-size $title-font;
+		text-align: center;
+		padding-left: $title-spacing;
+		letter-spacing: $title-spacing;
+	}
+}
+
+#title-container
+{
+	width: 95%;
+	margin: 0 auto;
+}
+
+/* Footer stuff */
+footer
+{
+	height: 2em;
+	margin: 0 auto;
+	width: 95%;
+	text-align: center;
+
+	span
+	{
+		color: white;
+		font: $footer-font;
+	}
+}
+
+/* Body stuff */
+
+h2
+{
+	font: condensed $h1-size $title-font;
+	margin: $text-margin;
+	color: $text-color;
+}
+
+h3
+{
+	font: condensed $h2-size $title-font;
+	margin: $text-margin;
+	color: $text-color;
+}
+
+p
+{
+	width: 100%;
+	font: $main-font;
+	margin: $text-margin * .7 $text-margin;
+	color: $text-color;
+}
+
+ul
+{
+	margin-left: 2em;
+	font: $main-font;
+	color: $text-color;
+}
+
+a
+{
+	color: #fff;
+}
+
+a:hover
+{
+	color: #ccc;
+}
+
+.container
+{
+	background-color: white;
+	margin: 0 auto;
+	width: 95%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* RSVP box */
+
+.rsvp
+{
+	color: white;
+	background-color: #666;
+	margin: $text-margin;
+	padding: 1em;
+	border-radius: 1em;
+	width: 100%;
+
+	ul
+	{
+		list-style: none;
+	}
+	li
+	{
+		width: 100%;
+		margin: 6pt 0;
+	}
+}
+
+.rsvp-label
+{
+	font: condensed $h2-size $title-font;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+}
+
+.rsvp-form
+{
+	input[type=text]
+	{
+		width: 100%;
+		height: 14pt;
+	}
+
+	textarea
+	{
+		width: 100%;
+		height: 36pt;
+	}
+
+	label
+	{
+		margin-right: 2em;
+		font-family: $title-font;
+	}
+
+	button
+	{
+		padding: 4pt;
+		font:12pt $title-font;
+		color: $text-color;
+	}
+}
+
+.success
+{
+	font-size: 80pt;
+	color: #53D54B;
+}
+
+/* Desktop Additional Rules */
+
+@media only screen and (min-width: $threshold-width)
+{
+	.mobile
+	{
+		display: none;
+	}
+
+	.desktop
+	{
+		display: inline;
+	}
+
+	header
+	{
+		h1
+		{
+			font-size: $desktop-title-size;
+		}
+	}
+
+	.container
+	{
+		max-width: $desktop-width;
+	}
+
+
+	footer
+	{
+		max-width: $desktop-width;
+	}
+
+	.rsvp
+	{
+		max-width: 300px;
+	}
+}
